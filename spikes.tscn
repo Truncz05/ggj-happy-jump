@@ -1,0 +1,142 @@
+[gd_scene load_steps=9 format=3 uid="uid://bq1evr0r8xlho"]
+
+[ext_resource type="Texture2D" uid="uid://dahx2kyx7wj2l" path="res://icon.svg" id="1_7a12a"]
+[ext_resource type="Texture2D" uid="uid://dlop46pwv3yq2" path="res://Rocky Roads/Rocky Roads/Enemies/bat.png" id="2_vh6hc"]
+[ext_resource type="Texture2D" uid="uid://bljmqb3pq8jsd" path="res://Rocky Roads/Rocky Roads/Enemies/bear_polar.png" id="3_8itl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f55er"]
+size = Vector2(141, 127.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyta7"]
+texture = ExtResource("1_7a12a")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hc6eb"]
+texture = ExtResource("2_vh6hc")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kexdy"]
+texture = ExtResource("3_8itl2")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_suao5"]
+sources/0 = SubResource("TileSetAtlasSource_oyta7")
+sources/1 = SubResource("TileSetAtlasSource_hc6eb")
+sources/2 = SubResource("TileSetAtlasSource_kexdy")
+
+[node name="Area2D2" type="Area2D"]
+position = Vector2(-1598, -746)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 7)
+shape = SubResource("RectangleShape2D_f55er")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(10, 25)
+scale = Vector2(1.1527, 1.0924)
+tile_set = SubResource("TileSet_suao5")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131074, 196608, 2, -65538, 196608, 3, -131073, 262144, 2, -65537, 262144, 3, -262149, 0, 0, -196613, 0, 1, -131077, 0, 2, -65541, 0, 3, -5, 0, 4, 65531, 0, 5, 131067, 0, 6, 196603, 0, 7, -262148, 65536, 0, -196612, 65536, 1, -131076, 65536, 2, -65540, 65536, 3, -4, 65536, 4, 65532, 65536, 5, 131068, 65536, 6, 196604, 65536, 7, -262147, 131072, 0, -196611, 131072, 1, -131075, 131072, 2, -65539, 131072, 3, -3, 131072, 4, 65533, 131072, 5, 131069, 131072, 6, 196605, 131072, 7, -262146, 196608, 0, -196610, 196608, 1, -2, 196608, 4, 65534, 196608, 5, 131070, 196608, 6, 196606, 196608, 7, -262145, 262144, 0, -196609, 262144, 1, -1, 262144, 4, 65535, 262144, 5, 131071, 262144, 6, 196607, 262144, 7, -327680, 327680, 0, -262144, 327680, 1, -196608, 327680, 2, -131072, 327680, 3, -65536, 327680, 4, 0, 327680, 5, 65536, 327680, 6, 131072, 327680, 7, -327679, 393216, 0, -262143, 393216, 1, -196607, 393216, 2, -131071, 393216, 3, -65535, 393216, 4, 1, 393216, 5, 65537, 393216, 6, 131073, 393216, 7, -327678, 458752, 0, -262142, 458752, 1, -196606, 458752, 2, -131070, 458752, 3, -65534, 458752, 4, 2, 458752, 5, 65538, 458752, 6, 131074, 458752, 7)

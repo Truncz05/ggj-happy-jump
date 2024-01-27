@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -600.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -26,3 +27,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+
+
+func _on_area_2d_2_body_entered(body):
+	if body.get_name() == "player test":
+		get_tree().reload_current_scene()
