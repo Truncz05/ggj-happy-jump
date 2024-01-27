@@ -1,23 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy4ma3ffjk0u8"]
+[gd_scene load_steps=7 format=3 uid="uid://dy4ma3ffjk0u8"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_jv378"]
 [ext_resource type="Script" path="res://game_area.gd" id="1_shgic"]
 [ext_resource type="Texture2D" uid="uid://dahx2kyx7wj2l" path="res://icon.svg" id="2_sdmyi"]
-
-[sub_resource type="GDScript" id="GDScript_kqb5j"]
-script/source = "extends Area2D
-
-
-
-
-func _on_body_entered(body):
-	if body.get_name() == \"player test\":
-		get_tree().reload_current_scene()
-	
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm6nv"]
-size = Vector2(13214, 117.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmtx7"]
 size = Vector2(109, 122)
@@ -25,15 +10,12 @@ size = Vector2(109, 122)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfsxh"]
 size = Vector2(858, 89)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1l4h6"]
+radius = 102.02
+
 [node name="Node2D" type="Node2D"]
+position = Vector2(-17, 2)
 script = ExtResource("1_shgic")
-
-[node name="Area2D" type="Area2D" parent="."]
-script = SubResource("GDScript_kqb5j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(5367, 3169.25)
-shape = SubResource("RectangleShape2D_jm6nv")
 
 [node name="player test" type="CharacterBody2D" parent="."]
 position = Vector2(400, 477)
@@ -227,7 +209,7 @@ color = Color(0.462745, 0.0156863, 0.309804, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RigidBody2D10" type="RigidBody2D" parent="Plataformas"]
-position = Vector2(10212, 2051)
+position = Vector2(10189, 2134)
 rotation = -0.00833447
 disable_mode = 1
 gravity_scale = 0.0
@@ -245,4 +227,65 @@ offset_bottom = 80.0
 color = Color(0.462745, 0.0156863, 0.309804, 1)
 metadata/_edit_use_anchors_ = true
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="RigidBody2D11" type="RigidBody2D" parent="Plataformas"]
+position = Vector2(13273, 1803)
+rotation = -0.0250034
+scale = Vector2(1, 1)
+disable_mode = 1
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/RigidBody2D11"]
+modulate = Color(0.133333, 0, 0.0588235, 1)
+position = Vector2(426, 32.5)
+shape = SubResource("RectangleShape2D_hfsxh")
+
+[node name="ColorRect" type="ColorRect" parent="Plataformas/RigidBody2D11"]
+offset_left = -7.0
+offset_top = -11.0
+offset_right = 856.0
+offset_bottom = 80.0
+color = Color(0.462745, 0.0156863, 0.309804, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RigidBody2D12" type="RigidBody2D" parent="Plataformas"]
+position = Vector2(11334, 2047)
+rotation = -0.00833447
+scale = Vector2(1, 1)
+disable_mode = 1
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/RigidBody2D12"]
+modulate = Color(0.133333, 0, 0.0588235, 1)
+position = Vector2(426, 32.5)
+shape = SubResource("RectangleShape2D_hfsxh")
+
+[node name="ColorRect" type="ColorRect" parent="Plataformas/RigidBody2D12"]
+offset_left = -7.0
+offset_top = -11.0
+offset_right = 856.0
+offset_bottom = 80.0
+color = Color(0.462745, 0.0156863, 0.309804, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RigidBody2D10" type="RigidBody2D" parent="Plataformas/RigidBody2D12"]
+position = Vector2(979.074, -124.844)
+rotation = -0.00833447
+disable_mode = 1
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/RigidBody2D12/RigidBody2D10"]
+modulate = Color(0.133333, 0, 0.0588235, 1)
+position = Vector2(426, 32.5)
+shape = SubResource("RectangleShape2D_hfsxh")
+
+[node name="ColorRect" type="ColorRect" parent="Plataformas/RigidBody2D12/RigidBody2D10"]
+offset_left = -7.0
+offset_top = -11.0
+offset_right = 856.0
+offset_bottom = 80.0
+color = Color(0.462745, 0.0156863, 0.309804, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-177, 666)
+shape = SubResource("CircleShape2D_1l4h6")

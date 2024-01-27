@@ -1,8 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bq1evr0r8xlho"]
 
 [ext_resource type="Texture2D" uid="uid://dahx2kyx7wj2l" path="res://icon.svg" id="1_7a12a"]
-[ext_resource type="Texture2D" uid="uid://dlop46pwv3yq2" path="res://Rocky Roads/Rocky Roads/Enemies/bat.png" id="2_vh6hc"]
-[ext_resource type="Texture2D" uid="uid://bljmqb3pq8jsd" path="res://Rocky Roads/Rocky Roads/Enemies/bear_polar.png" id="3_8itl2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f55er"]
 size = Vector2(141, 127.5)
@@ -74,8 +72,11 @@ texture = ExtResource("1_7a12a")
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3nqyf"]
+load_path = "res://.godot/imported/bat.png-e8f398cdd677cb1eb8d51b09b93e645e.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hc6eb"]
-texture = ExtResource("2_vh6hc")
+texture = SubResource("CompressedTexture2D_3nqyf")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -97,8 +98,11 @@ texture = ExtResource("2_vh6hc")
 6:3/0 = 0
 7:3/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qfdpg"]
+load_path = "res://.godot/imported/bear_polar.png-21307add7f9cdf519d7a019908c51d45.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kexdy"]
-texture = ExtResource("3_8itl2")
+texture = SubResource("CompressedTexture2D_qfdpg")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
