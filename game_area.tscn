@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy4ma3ffjk0u8"]
+[gd_scene load_steps=6 format=3 uid="uid://dy4ma3ffjk0u8"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_jv378"]
+[ext_resource type="Script" path="res://game_area.gd" id="1_shgic"]
 [ext_resource type="Texture2D" uid="uid://dahx2kyx7wj2l" path="res://icon.svg" id="2_sdmyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfsxh"]
@@ -10,6 +11,7 @@ size = Vector2(858, 89)
 size = Vector2(109, 122)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_shgic")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(7, 569)
@@ -27,10 +29,14 @@ offset_top = -11.0
 offset_right = 856.0
 offset_bottom = 80.0
 color = Color(0.462745, 0.0156863, 0.309804, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(429, 263)
 script = ExtResource("1_jv378")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(38, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 modulate = Color(1, 1, 0, 1)
@@ -40,3 +46,39 @@ shape = SubResource("RectangleShape2D_qmtx7")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(41, 2)
 texture = ExtResource("2_sdmyi")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(7, 569)
+disable_mode = 1
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+modulate = Color(0.133333, 0, 0.0588235, 1)
+position = Vector2(1354, 1)
+shape = SubResource("RectangleShape2D_hfsxh")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D2"]
+offset_left = 932.0
+offset_top = -51.0
+offset_right = 1795.0
+offset_bottom = 40.0
+color = Color(0.462745, 0.0156863, 0.309804, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(7, 569)
+disable_mode = 1
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+modulate = Color(0.133333, 0, 0.0588235, 1)
+position = Vector2(2299, -27)
+shape = SubResource("RectangleShape2D_hfsxh")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D3"]
+offset_left = 1866.0
+offset_top = -71.0
+offset_right = 2729.0
+offset_bottom = 20.0
+color = Color(0.462745, 0.0156863, 0.309804, 1)
+metadata/_edit_use_anchors_ = true
